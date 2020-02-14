@@ -1,0 +1,56 @@
+﻿<Window x:Class="BrainFeckUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		
+        xmlns:local="clr-namespace:BrainFeckUI"
+        mc:Ignorable="d"
+        Title="BrainFeck - Brainfuck Interpreter" ResizeMode="NoResize" Height="550" Width="900">
+	<Grid >
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="20" />
+			<!-- 0 -->
+			<ColumnDefinition Width="*" />
+			<!-- 1 -->
+			<ColumnDefinition Width="150" />
+			<!-- 2 -->
+			<ColumnDefinition Width="auto" />
+			<!-- 3 -->
+			<ColumnDefinition Width="150" />	<!-- 4 -->
+
+			<ColumnDefinition Width="150" /> <!-- 5 -->
+			<ColumnDefinition Width="20" />	<!--- 6 -->
+			<!-- 5 -->
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="20" />
+			<!-- 0 -->
+			<RowDefinition Height="auto" />
+			<!-- 1 -->
+			<RowDefinition Height="auto" />
+			<!-- 2 -->
+			<RowDefinition Height="*" />
+			<!-- 3 auto? *? -->
+			<RowDefinition Height="40" />
+			<!-- 4 -->
+			<RowDefinition Height="Auto" />
+			<!-- 5 -->
+			<RowDefinition Height="*" />
+			<!-- 6 -->
+			<RowDefinition Height="20" />
+			<!-- 7 -->
+		</Grid.RowDefinitions>
+		<TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" FontSize="36">
+			BrainFeck - интерпретатор языка <Hyperlink NavigateUri="https://ru.wikipedia.org/wiki/Brainfuck" RequestNavigate="Hyperlink_GoToSite"> Brainfuck </Hyperlink></TextBlock>
+		<TextBlock Grid.Column="1" Grid.Row="2" Margin="0,0" FontSize="20">
+			Введите команду на языке Brainfuck:</TextBlock>
+		<TextBox x:Name="codeInputField" Grid.Column="1" Grid.Row="3" Grid.RowSpan="1" Grid.ColumnSpan="5" Margin="0,0,0,0" AcceptsReturn="True" TextWrapping="Wrap"/>
+		<Button x:Name="getCodeSample" Grid.Column="2" Grid.Row="4" Margin="40,10,0,10" Content="Пример кода" Click="GetCodeSample_Click"/>
+		<Button x:Name="cleanInputField" Grid.Column="4" Grid.Row="4" Margin="40,10,0,10" Content="Стереть код" Click="CleanCodeInputField_Click"/>
+		
+		<Button x:Name="runCode" Grid.Column="5" Grid.Row="4" Margin="39.8,10,19.6,0" Content="Пуск" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top" Click="RunCode_Click"/>
+		<TextBlock Grid.Column="1" Grid.Row="5" Margin="0,0" FontSize="20" >Brainfuck output:</TextBlock>
+		<TextBox x:Name="resultOutputField" Grid.Column="1" Grid.Row="6" Grid.RowSpan="1" Grid.ColumnSpan="5" Margin="0,0,0,0" IsReadOnly="true"/>
+	</Grid>
+</Window>
