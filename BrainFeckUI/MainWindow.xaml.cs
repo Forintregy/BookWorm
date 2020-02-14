@@ -27,7 +27,7 @@ namespace BrainFeckUI
         {
             InitializeComponent();
         }
-
+        
         private void GetCodeSample_Click(object sender, RoutedEventArgs e)
         {
             
@@ -52,5 +52,7 @@ namespace BrainFeckUI
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
         }
+
+       
     }
 }
